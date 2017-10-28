@@ -1,0 +1,53 @@
+table tbody tr td{
+    padding: 1rem; //Marge à l'intérieur des cellules, équivalent de cellpadding
+}
+
+.qt td, .tp td{
+    padding-bottom: 0.1rem;
+    font-size: 0.8rem;
+}
+
+.card-footer{
+    background-color: transparent; 
+    border-top: 1px solid #17a2b8;
+    padding: 1rem;
+}
+.card-footer button{
+    margin-left: 1rem;
+}
+
+.card-body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.performanceTable{
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-footer-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.pimpmy_card{
+    margin-bottom: 1rem;
+}
+
+@media(max-width:420px){
+    table tbody tr td{
+        padding: 0.5rem; //Marge à l'intérieur des cellules, équivalent de cellpadding
+    }
+}
+
+@media(max-width:320px){
+    table tbody tr td{
+        padding-left: 0; 
+    }
+}
+
+/*@media(min-width:410px){
+    .pimpmy_card{
+        max-width: 70%;
+    }
+}*/
