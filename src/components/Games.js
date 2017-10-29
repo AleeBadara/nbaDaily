@@ -1,5 +1,5 @@
 import React from 'react';
-var $ = require("jquery");
+import $ from 'jquery';
 
 import Api from '../api/TodayGames';
 import Game from './Game';
@@ -20,7 +20,11 @@ class Games extends React.Component {
         this.setState({ date });
     }
 
-    componentWillMount() {
+    /**
+     * This method will be executed when the component “mounts” (is added to the DOM) for the first time. 
+     * This method is only executed once during the component’s life
+     */
+    componentDidMount() {
         let d = new Date();
         let year = d.getFullYear();
         let month = d.getMonth() + 1;
@@ -31,10 +35,14 @@ class Games extends React.Component {
         $.ajax({
             url: "https://cors-anywhere.herokuapp.com/data.nba.net/v2015/json/mobile_teams/nba/2017/scores/00_todays_scores.json",
         })
-            .done(function (data) {
-                self.setState({ games: data.gs.g });
-                self.setState({ isLoading: false });
-            });
+        .done(function (data) {
+            self.setState({ games: data.gs.g });
+            self.setState({ isLoading: false });
+        })
+        .fail(function( xhr, status, errorThrown ) {
+            self.setState({ games:[] });
+            self.setState({ isLoading: false });
+        });;
     }
 
     render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-var $ = require("jquery");
+import $ from 'jquery';
 
 class GameDetail extends React.Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class GameDetail extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         let { gameid } = this.props.match.params;
         let d = new Date();
         let year = d.getFullYear();
@@ -40,8 +40,8 @@ class GameDetail extends React.Component {
             const hPlayers = game.hls.pstsg;
 
             let vTeam= {};
-            vTeam.teamName=hName;
-            vTeam.teamCity=hCity;
+            vTeam.teamName=vName;
+            vTeam.teamCity=vCity;
             vTeam.visitorPlayers=vPlayers;
             
             let hTeam= {};
@@ -114,7 +114,7 @@ class GameDetail extends React.Component {
                     <div>
                         <div className="card border-info pimpmy_card">
                     <div className="card-header pimpmy_card_header">
-                        <p>Equipe Visiteur: {this.state.homeTeam.teamCity} {this.state.homeTeam.teamName}</p>
+                        <p>Equipe Visiteur: {this.state.visitorTeam.teamCity} {this.state.visitorTeam.teamName}</p>
                     </div>
                     <div className="card-body">
                         <table>
@@ -122,7 +122,7 @@ class GameDetail extends React.Component {
                                 <tr className="tp">
                                     <td></td>
                                     <td>Pts</td>
-                                    <td>Passes</td>
+                                    <td>Pss</td>
                                     <td>Rbs</td>
                                     <td>Memo</td>
                                 </tr>
@@ -144,7 +144,7 @@ class GameDetail extends React.Component {
                                 <tr className="tp">
                                     <td></td>
                                     <td>Pts</td>
-                                    <td>Passes</td>
+                                    <td>Pss</td>
                                     <td>Rbs</td>
                                     <td>Memo</td>
                                 </tr>

@@ -69,10 +69,18 @@ class Game extends React.Component {
                         </table>
                     </div>
                     <div className="card-footer">
-                        <div >
-                            <NavLink to={`stats/${this.props.gid}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
-                            <button className="btn btn-sm btn-outline-info">Video</button>
-                        </div>
+                        {st.toString() === "1" ?
+                            (
+                                <div >
+                                    <button className="btn btn-sm btn-outline-info disabled">Stats</button>
+                                    <button className="btn btn-sm btn-outline-info disabled">Video</button>
+                                </div>
+                            ) : (
+                                <div>
+                                    <NavLink to={`stats/${this.props.gid}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
+                                    <button className="btn btn-sm btn-outline-info disabled">Video</button>
+                                </div>
+                            )}
                     </div>
                 </div>
             </div>
