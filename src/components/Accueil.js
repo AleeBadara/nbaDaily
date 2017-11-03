@@ -59,6 +59,9 @@ let {gameid}= this.props.match.params;
 
 */
 
+// Video
+//http://api.nba.net//0/league/video/14b05981-6aff-4071-9f14-211b252bf1f1
+
 // les résultats du jour (00 est le code pour la nba)
 //http://data.nba.net/v2015/json/mobile_teams/nba/2017/scores/00_todays_scores.json
 
@@ -67,3 +70,7 @@ let {gameid}= this.props.match.params;
 
 // pour le planning
 //http://data.nba.net/json/cms/2017/league/nba_games.json
+
+// planning
+// http://nbasense.com/nba-api/Data/MobileTeams/Schedule/LeagueScheduleMonth#request-form-playground
+// http://data.nba.net/v2015/json/mobile_teams/nba/2017/league/00_league_schedule_11.json

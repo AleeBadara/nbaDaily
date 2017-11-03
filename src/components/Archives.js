@@ -8,7 +8,7 @@ class Archives extends React.Component {
     constructor(props) {
         super(props);
         let d = new Date();
-        d.setDate(d.getDate() - 1); // les archives commencent à jour j-1.
+        d.setDate(d.getDate() - 2); // les archives commencent à jour j-2.
         let year = d.getFullYear();
         let month = d.getMonth() + 1;
         let day = d.getDate();
