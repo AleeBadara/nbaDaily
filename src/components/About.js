@@ -1,4 +1,5 @@
 import React from 'react';
+import RetourBtn from './RetourBtn';
 
 const About = () => {
     return (
@@ -10,13 +11,14 @@ const About = () => {
             <p>Si vous êtes à la recherche d'articles sur le meilleur joueur de tout les temps, de reportage sur tel joueur, équipe, etc., des à-côtés de la NBA, ce site n'est pas le bon endroit.</p>
             <h5>Améliorez le site</h5>
             <p>Le but de ce site est aussi d'être à l'écoute des utilisateurs. Si vous voulez voir certaines choses en plus sur ce site, n'hésitez à me faire signe.
-                Tant que la proposition est pertinente et reste dans le concept principal (à savoir centré autour des résultats de matchs), je la mettrai en place pour le bonheur de tout le monde.</p>
+                Tant que la proposition est pertinente et réalisable, je la mettrai en place pour le bonheur de tout le monde.</p>
             <p>Si une idée est retenue, vous verrez votre nom associé à cette idée sur cette page.</p>
             <p>Pour toute proposition, contactez moi par l'un des canaux ci-dessous (twitter ou mail).</p>
             <div>
                 <a href="https://twitter.com/Iam_Alioune" target="_blank"><i className="fa fa-twitter fa-3x pimpmy_fontawesome" aria-hidden="true"></i>@Iam_Alioune</a>
                 <p><i className="fa fa-envelope fa-3x pimpmy_fontawesome" aria-hidden="true" style={{ color: '#007bff' }}></i>mbaye.alioune.badara@gmail.com</p>
             </div>
+            <RetourBtn/>
         </div>
     )
 

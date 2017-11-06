@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 class Archive extends React.Component {
     render() {
-        let { id, period_time, visitor, home, st } = this.props;
+        let { id, period_time, visitor, home, st, date } = this.props;
+        let q= `${visitor.city} ${visitor.nickname} vs ${home.city} ${home.nickname} Full Game Highlights`;
         let getStatusGame = () => {
             switch (period_time.game_status.toString()) {
                 case "1":
@@ -126,7 +127,7 @@ class Archive extends React.Component {
                             ) : (
                                 <div>
                                     <NavLink to={`stats/${this.props.id}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
-                                    <button className="btn btn-sm btn-outline-info disabled ">Video</button>
+                                    <NavLink to={`videos/${this.props.date}/${q}`}><button className="btn btn-sm btn-outline-info ">Video</button></NavLink>
                                 </div>
                             )}
                     </div>

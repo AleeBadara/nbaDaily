@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 
+import RetourBtn from './RetourBtn';
+
 class Classement extends React.Component {
     constructor(props) {
         super();
@@ -27,27 +29,27 @@ class Classement extends React.Component {
             });
     }
     render() {
-        let renderEastClassement=()=>{
-            return this.state.eastTeams.map((team)=>{
-                return(
+        let renderEastClassement = () => {
+            return this.state.eastTeams.map((team) => {
+                return (
                     <tr key={team.id}>
                         <td>{team.team_stats.rank}</td>
                         <td>{team.name} - {team.nickname}</td>
                         <td>{team.team_stats.wins}</td>
                         <td>{team.team_stats.losses}</td>
-                   </tr>
+                    </tr>
                 );
             });
         };
-        let renderWestClassement=()=>{
-            return this.state.westTeams.map((team)=>{
-                return(
+        let renderWestClassement = () => {
+            return this.state.westTeams.map((team) => {
+                return (
                     <tr key={team.id}>
                         <td>{team.team_stats.rank}</td>
                         <td>{team.name} - {team.nickname}</td>
                         <td>{team.team_stats.wins}</td>
                         <td>{team.team_stats.losses}</td>
-                   </tr>
+                    </tr>
                 );
             });
         };
@@ -84,10 +86,10 @@ class Classement extends React.Component {
                                     <table>
                                         <tbody>
                                             <tr className="tp">
-                                            <td><b>Rang</b></td>
-                                            <td><b>Equipe</b></td>
-                                            <td><b>V</b></td>
-                                            <td><b>D</b></td>
+                                                <td><b>Rang</b></td>
+                                                <td><b>Equipe</b></td>
+                                                <td><b>V</b></td>
+                                                <td><b>D</b></td>
                                             </tr>
                                             {renderWestClassement()}
                                         </tbody>
@@ -97,7 +99,7 @@ class Classement extends React.Component {
 
                         </div>
                     )}
-
+                <RetourBtn />
             </div>
         )
     }

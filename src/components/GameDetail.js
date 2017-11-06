@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 
+import RetourBtn from './RetourBtn';
+
 class GameDetail extends React.Component {
     constructor(props) {
         super(props);
@@ -156,7 +158,7 @@ class GameDetail extends React.Component {
 
                     </div>
                 )}
-                
+                <RetourBtn/>
             </div>
         )
     }

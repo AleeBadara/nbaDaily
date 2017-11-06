@@ -12,6 +12,7 @@ import Classement from './components/Classement';
 import Games from './components/Games';
 import GameDetail from './components/GameDetail';
 import Navigation from './components/Navigation';
+import Videos from './components/Videos';
 import Test from './components/Test';
 
 import './styles/style.scss';
@@ -26,7 +27,7 @@ const routes = (
             <Route path="/classement" component={Classement} />
             <Route path="/archives" component={Archives} />
             <Route path="/about" component={About} />
-            <Route path="/test" component={Test} />
+            <Route path="/videos/:date/:q" component={Videos} />
             </div>
         </div>
     </HashRouter>

@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 class Game extends React.Component {
     render() {
         let { v, h, st } = this.props;
+        let date = this.props.gcode.split('/')[0];
+        let q = `${v.tc} ${v.tn} vs ${h.tc} ${h.tn} Full Game Highlights`;
         let getStatusGame = () => {
             switch (st.toString()) {
                 case "1":
@@ -32,6 +34,33 @@ class Game extends React.Component {
                 return <b>{h.s}</b>;
             } else {
                 return h.s;
+            }
+        }
+
+        let renderFooter = () => {
+            if (st.toString() === "1") {
+                return (
+                    <div >
+                        <button className="btn btn-sm btn-outline-info disabled">Stats</button>
+                        <button className="btn btn-sm btn-outline-info disabled">Video</button>
+                    </div>
+                )
+            } else if (st.toString() === "2") {
+                return (
+                    <div >
+                        <button className="btn btn-sm btn-outline-info ">Stats</button>
+                        <button className="btn btn-sm btn-outline-info disabled">Video</button>
+                    </div>
+                )
+
+            } else {
+                return (
+                    <div>
+                        <NavLink to={`stats/${this.props.gid}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
+                        <NavLink to={`videos/${date}/${q}`}><button className="btn btn-sm btn-outline-info ">Video</button></NavLink>
+                    </div>
+                )
+
             }
         }
 
@@ -69,18 +98,7 @@ class Game extends React.Component {
                         </table>
                     </div>
                     <div className="card-footer">
-                        {st.toString() === "1" ?
-                            (
-                                <div >
-                                    <button className="btn btn-sm btn-outline-info disabled">Stats</button>
-                                    <button className="btn btn-sm btn-outline-info disabled">Video</button>
-                                </div>
-                            ) : (
-                                <div>
-                                    <NavLink to={`stats/${this.props.gid}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
-                                    <button className="btn btn-sm btn-outline-info disabled">Video</button>
-                                </div>
-                            )}
+                        {renderFooter()}
                     </div>
                 </div>
             </div>
