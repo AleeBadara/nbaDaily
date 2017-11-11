@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import Spinner from 'react-spinkit';
 
 import Api from '../api/TodayGames';
 import Game from './Game';
@@ -57,7 +58,8 @@ class Games extends React.Component {
             } else if (isLoading) {
                 return (
                     <div className="container">
-                        <p>Chargement...</p>
+                        <span>Chargement...</span>
+                        <Spinner name="rotating-plane" color="#17a2b8"/>
                     </div>
                 )
             } else {

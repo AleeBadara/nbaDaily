@@ -11,9 +11,8 @@ const Navigation = () => {
             </button>
             <div className="collapse navbar-collapse pimpmy_menu" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                <li><NavLink exact to="/" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Score du jour</NavLink></li>
+                <li><NavLink exact to="/" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Live</NavLink></li>
                 <li><NavLink exact to="/classement" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Classement</NavLink></li>
-                <li><NavLink exact to="/calendrier" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Calendrier</NavLink></li>
                 <li><NavLink exact to="/archives" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Archives</NavLink></li>
                 <li><NavLink exact to="/about" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>A propos</NavLink></li>
                 </div>

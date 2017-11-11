@@ -1,5 +1,6 @@
 import React from 'react';
 var $ = require("jquery");
+import Spinner from 'react-spinkit';
 
 import Archive from './Archive';
 import RetourBtn from './RetourBtn';
@@ -78,7 +79,12 @@ class Archives extends React.Component {
                     );
                 });
             } else if (isLoading) {
-                return <p>Chargement...</p>
+                return (
+                    <div className="container">
+                        <span>Chargement...</span>
+                        <Spinner name="rotating-plane" color="#17a2b8" />
+                    </div>
+                )
             } else {
                 return <p>Aucun résultat trouvé pour aujourd'hui.</p>
             }

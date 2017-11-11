@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import Spinner from 'react-spinkit';
 
 import RetourBtn from './RetourBtn';
 
@@ -56,7 +57,10 @@ class Classement extends React.Component {
         return (
             <div className="container">
                 {this.state.isLoading ? (
-                    <p>Chargement...</p>
+                    <div className="container">
+                        <span>Chargement...</span>
+                        <Spinner name="rotating-plane" color="#17a2b8" />
+                    </div>
                 ) : (
                         <div>
                             <div className="card border-info pimpmy_card">
