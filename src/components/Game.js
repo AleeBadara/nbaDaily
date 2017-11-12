@@ -48,7 +48,7 @@ class Game extends React.Component {
             } else if (st.toString() === "2") {
                 return (
                     <div >
-                        <button className="btn btn-sm btn-outline-info ">Stats</button>
+                        <NavLink to={`stats/${this.props.gid}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
                         <button className="btn btn-sm btn-outline-info disabled">Video</button>
                     </div>
                 )
