@@ -12,11 +12,13 @@ class GameDetail extends React.Component {
             homeTeam: {
                 teamName: '',
                 teamCity: '',
+                teamAbrev:'',
                 homePlayers: [],
             },
             visitorTeam: {
                 teamName: '',
                 teamCity: '',
+                teamAbrev:'',
                 visitorPlayers: []
             }
         };
@@ -36,20 +38,24 @@ class GameDetail extends React.Component {
 
                 const vName = game.vls.tn;
                 const vCity = game.vls.tc;
+                const vAbreviation= game.vls.ta;
                 const vPlayers = game.vls.pstsg;
 
                 const hName = game.hls.tn;
                 const hCity = game.hls.tc;
+                const hAbreviation= game.hls.ta;
                 const hPlayers = game.hls.pstsg;
 
                 let vTeam = {};
                 vTeam.teamName = vName;
                 vTeam.teamCity = vCity;
+                vTeam.teamAbrev=vAbreviation;
                 vTeam.visitorPlayers = vPlayers;
 
                 let hTeam = {};
                 hTeam.teamName = hName;
                 hTeam.teamCity = hCity;
+                hTeam.teamAbrev=hAbreviation;
                 hTeam.homePlayers = hPlayers;
 
                 self.setState({ homeTeam: hTeam });
@@ -120,7 +126,7 @@ class GameDetail extends React.Component {
                         <div>
                             <div className="card border-info pimpmy_card">
                                 <div className="card-header pimpmy_card_header">
-                                    <p>Equipe Visiteur: {this.state.visitorTeam.teamCity} {this.state.visitorTeam.teamName}</p>
+                                    <p>Equipe Visiteur: <img type="image/svg+xml" src={`/img/${this.state.visitorTeam.teamAbrev}_logo.svg`}  width="50" heigth="50" />{this.state.visitorTeam.teamCity} {this.state.visitorTeam.teamName}</p>
                                 </div>
                                 <div className="card-body">
                                     <table>
@@ -142,7 +148,7 @@ class GameDetail extends React.Component {
                             </div>
                             <div className="card border-info pimpmy_card">
                                 <div className="card-header pimpmy_card_header">
-                                    <p>Equipe Domicile: {this.state.homeTeam.teamCity} {this.state.homeTeam.teamName}</p>
+                                    <p>Equipe Domicile: <img type="image/svg+xml" src={`/img/${this.state.homeTeam.teamAbrev}_logo.svg`}  width="50" heigth="50" /> {this.state.homeTeam.teamCity} {this.state.homeTeam.teamName}</p>
                                 </div>
                                 <div className="card-body">
                                     <table>

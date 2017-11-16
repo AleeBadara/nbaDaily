@@ -27,7 +27,7 @@ const routes = (
             <Route path="/classement" component={Classement} />
             <Route path="/archives" component={Archives} />
             <Route path="/about" component={About} />
-            <Route path="/videos/:date/:q" component={Videos} />
+            <Route path="/videos/:date/:q/:v/:h" component={Videos} />
             </div>
         </div>
     </HashRouter>

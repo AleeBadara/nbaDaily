@@ -9,13 +9,18 @@ class Videos extends React.Component {
         super(props);
         this.state = {
             isLoading: true,
-            videos: []
+            videos: [],
+            v: '',
+            h: ''
         };
+        console.log(this.props.match.params);
     }
 
     componentDidMount() {
         const API_KEY = 'AIzaSyA12XHbVlp12yxuh523Z6rlLVZ0a-WDaSQ';
-        let { date, q } = this.props.match.params;
+        let { date, q, v, h } = this.props.match.params;
+        this.setState({ v: this.props.match.params.v });
+        this.setState({ h: this.props.match.params.h });
 
         let year = date.substring(0, 4);
         let month = date.substring(4, 6);
@@ -62,6 +67,10 @@ class Videos extends React.Component {
         }
         return (
             <div className="container">
+                <div className="logo_container">
+                    <img type="image/svg+xml" src={`/img/${this.state.v}_logo.svg`} alt={`${this.state.v} logo`} className="logo" title={`${this.state.v} logo`} /> VS <img type="image/svg+xml" src={`/img/${this.state.h}_logo.svg`} alt={`${this.state.h} logo`} title={`${this.state.h} logo`} className="logo" />
+                </div>
+
                 {renderVideosResults()}
                 <RetourBtn />
             </div>
