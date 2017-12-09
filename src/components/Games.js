@@ -66,6 +66,9 @@ class Games extends React.Component {
                 return (
                     <div className="container">
                         <p>Aucun résultat trouvé pour aujourd'hui.</p>
+                        <div className="container retour">
+                            <NavLink exact to="/archives"><button type="button" className="btn btn-info">Voir Archives</button></NavLink>
+                        </div>
                     </div>
                 )
             }

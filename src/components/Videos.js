@@ -37,7 +37,7 @@ class Videos extends React.Component {
                 self.setState({ isLoading: false });
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert(textStatus, + ' | ' + errorThrown);
+                //alert(textStatus, + ' | ' + errorThrown);
             }
         });
     }
