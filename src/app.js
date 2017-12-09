@@ -14,8 +14,8 @@ import GameDetail from './components/GameDetail';
 import Navigation from './components/Navigation';
 import Videos from './components/Videos';
 import Leaders from './components/Leaders';
-import Teams from './components/Teams';
-import TeamProfile from './components/TeamProfile';
+import Teams from './components/Team/Teams';
+import TeamProfile from './components/Team/TeamProfile';
 import Test from './components/Test';
 
 import './styles/style.scss';
