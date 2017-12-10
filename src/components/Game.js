@@ -44,23 +44,27 @@ const Game = (props) => {
         if (st.toString() === "1") {
             return (
                 <div >
-                    <button className="btn btn-sm btn-outline-info disabled">Stats</button>
-                    <button className="btn btn-sm btn-outline-info disabled">Video</button>
+                    <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button>
+                    <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button>
+                    <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-comment-o" aria-hidden="true"></i></button>
                 </div>
             )
         } else if (st.toString() === "2") {
             return (
                 <div >
-                    <NavLink to={`stats/${props.gid}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
-                    <button className="btn btn-sm btn-outline-info disabled">Video</button>
+                    <NavLink to={`stats/${props.gid}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button></NavLink>
+                    <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button>
+                    <NavLink to={`comments/${date}/${props.gid}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-commenting-o" aria-hidden="true"></i></button></NavLink>
+                    
                 </div>
             )
 
         } else {
             return (
                 <div>
-                    <NavLink to={`stats/${props.gid}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
-                    <NavLink to={`videos/${date}/${q}/${vAbreviation}/${hAbreviation}`}><button className="btn btn-sm btn-outline-info ">Video</button></NavLink>
+                    <NavLink to={`stats/${props.gid}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button></NavLink>
+                    <NavLink to={`videos/${date}/${q}/${vAbreviation}/${hAbreviation}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button></NavLink>
+                    <NavLink to={`comments/${date}/${props.gid}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-comment-o" aria-hidden="true"></i></button></NavLink>
                 </div>
             )
 

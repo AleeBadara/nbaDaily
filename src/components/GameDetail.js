@@ -168,7 +168,7 @@ class GameDetail extends React.Component {
 
                         </div>
                     )}
-                <RetourBtn />
+                <RetourBtn  chemin="/"/>
             </div>
         )
     }

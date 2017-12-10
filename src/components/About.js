@@ -19,7 +19,7 @@ const About = () => {
             </div>
             <h5>Crédits</h5>
             <p>Merci à Freepik de www.flaticon.com pour le Favicon du site.</p>
-            <RetourBtn />
+            <RetourBtn chemin="/"/>
         </div>
     )
 

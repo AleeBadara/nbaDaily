@@ -9,6 +9,7 @@ import Accueil from './components/Accueil';
 import About from './components/About';
 import Archives from './components/Archives';
 import Classement from './components/Classement';
+import Comments from './components/Comments';
 import Games from './components/Games';
 import GameDetail from './components/GameDetail';
 import Navigation from './components/Navigation';
@@ -34,6 +35,7 @@ const routes = (
             <Route path="/about" component={About} />
             <Route path="/videos/:date/:q/:v/:h" component={Videos} />
             <Route path="/teamprofile/:id/:abrev" component={TeamProfile} />
+            <Route path="/comments/:gd/:gid" component={Comments} />
             </div>
         </div>
     </HashRouter>

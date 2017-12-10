@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import RetourBtn from '../RetourBtn';
+
 class Teams extends React.Component {
     constructor(props) {
         super(props);
@@ -55,6 +57,9 @@ class Teams extends React.Component {
                 <ul className="list-group">
                     {renderTeam()}
                 </ul>
+                <div style={{margin:"1rem"}}>
+                <RetourBtn  chemin="/"/>
+                </div>
 
 
             </div>

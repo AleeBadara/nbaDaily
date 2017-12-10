@@ -1,9 +1,9 @@
 import React from 'react';
 var $ = require("jquery");
-import Spinner from 'react-spinkit';
 
 import Archive from './Archive';
 import RetourBtn from './RetourBtn';
+import Spinner from 'react-spinkit';
 
 
 class Archives extends React.Component {
@@ -96,7 +96,7 @@ class Archives extends React.Component {
                     <input type="date" className="dateInput" ref="date" max={this.state.dateForInput} value={this.state.dateForInput} onChange={this.handleDateChange} />
                 </div>
                 {renderGames()}
-                <RetourBtn />
+                <RetourBtn  chemin="/"/>
             </div>
         );
     }

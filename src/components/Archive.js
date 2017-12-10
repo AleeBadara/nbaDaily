@@ -93,7 +93,6 @@ const Archive = (props) => {
                     );
                 default:
                     break;
-
             }
         }
 
@@ -122,13 +121,13 @@ const Archive = (props) => {
                     {period_time.game_status.toString() === "1" ?
                         (
                             <div >
-                                <button className="btn btn-sm btn-outline-info disabled">Stats</button>
-                                <button className="btn btn-sm btn-outline-info disabled">Video</button>
+                                <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button>
+                                <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button>
                             </div>
                         ) : (
                             <div>
-                                <NavLink to={`stats/${props.id}`}><button className="btn btn-sm btn-outline-info">Stats</button></NavLink>
-                                <NavLink to={`videos/${props.date}/${q}`}><button className="btn btn-sm btn-outline-info ">Video</button></NavLink>
+                                <NavLink to={`stats/${props.id}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button></NavLink>
+                                <NavLink to={`videos/${date}/${q}/${visitor.abbreviation}/${home.abbreviation}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button></NavLink>
                             </div>
                         )}
                 </div>

@@ -13,7 +13,6 @@ const Navigation = () => {
                 <div className="navbar-nav" data-target=".navbar-collapse" data-toggle="collapse">
                 <li><NavLink exact to="/" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Live</NavLink></li>
                 <li><NavLink exact to="/classement" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Classement</NavLink></li>
-                <li><NavLink exact to="/lead" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Performances</NavLink></li>
                 <li><NavLink exact to="/teams" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Equipes</NavLink></li>
                 <li><NavLink exact to="/archives" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Archives</NavLink></li>
                 <li><NavLink exact to="/about" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>A propos</NavLink></li>

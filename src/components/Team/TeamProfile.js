@@ -1,7 +1,10 @@
 import React from 'react';
 
+import RetourBtn from '../RetourBtn';
+import TeamAwards from './TeamAwards';
 import TeamDetails from './TeamDetails';
 import TeamSocialSites from './TeamSocialSites';
+import TeamHallOfFame from './TeamHallOfFame';
 
 class TeamProfile extends React.Component {
     constructor(props) {
@@ -11,7 +14,8 @@ class TeamProfile extends React.Component {
             socialSites: [],
             awards: [],
             hallOfFameInductees: [],
-            retiredMembers: []
+            retiredMembers: [],
+            isLoading:true
         }
     }
     componentDidMount() {
@@ -27,27 +31,30 @@ class TeamProfile extends React.Component {
                     let index = result.TeamDetails[i];
                     if (index.hasOwnProperty("Details")) {
                         self.setState({ details: index['Details'] });
-                        //console.log(self.state.details)
                     }
 
                     if (index.hasOwnProperty("SocialSites")) {
                         self.setState({ socialSites: index['SocialSites'] });
-                        //console.log(self.state.socialSites)
                     }
                     if (index.hasOwnProperty("Awards")) {
                         self.setState({ awards: index['Awards'] });
-                        //console.log(self.state.awards)
                     }
                     if (index.hasOwnProperty("HallOfFameInductees")) {
                         self.setState({ hallOfFameInductees: index['HallOfFameInductees'] });
-                        //console.log(self.state.hallOfFameInductees)
                     }
                     if (index.hasOwnProperty("RetiredMembers")) {
                         self.setState({ retiredMembers: index['RetiredMembers'] });
-                        //console.log(self.state.retiredMembers)
                     }
                 }
-            });
+                self.setState({ isLoading: false });
+            })
+            .fail(function (xhr, status, errorThrown) {
+                self.setState({ details: [] });
+                self.setState({ socialSites: [] });
+                self.setState({ awards: [] });
+                self.setState({ hallOfFameInductees: [] });
+                self.setState({ isLoading: false });
+            });;
     }
     render() {
         let getDetails=()=>{
@@ -82,13 +89,31 @@ class TeamProfile extends React.Component {
             return socialSites;
 
         }
-        
-        console.log(this.state.details[0])
+
+        let getAwards=()=>{
+            let awards={};
+            if(this.state.awards && this.state.awards.length>0){
+                awards= this.state.awards;
+            }
+            return awards;
+        }
+
+        let getHallOfFameInductees=()=>{
+            let hallOfFameInductees={};
+            if(this.state.hallOfFameInductees && this.state.hallOfFameInductees.length>0){
+                hallOfFameInductees= this.state.hallOfFameInductees;
+            }
+            return hallOfFameInductees;
+        }
         
         return (
             <div className="container">
                 <TeamDetails details={getDetails()}/>
+                <TeamAwards awards={getAwards()}/>
+                <TeamHallOfFame hallOfFameInductees={getHallOfFameInductees()}/>
                 <TeamSocialSites socialSites={getSocialSites()}/>
+                <p><small>*: des données sur les 2 années précédentes peuvent être manquantes. Ceci est dû à la périodicité de mise à jour des données de la part de la NBA.</small></p>
+                <RetourBtn chemin="/teams"/>
             </div>
         )
     }

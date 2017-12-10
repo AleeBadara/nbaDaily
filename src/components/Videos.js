@@ -13,7 +13,6 @@ class Videos extends React.Component {
             v: '',
             h: ''
         };
-        console.log(this.props.match.params);
     }
 
     componentDidMount() {
@@ -27,10 +26,11 @@ class Videos extends React.Component {
         let day = date.substring(6, 8);
 
         let dateForYTApi = new Date(year, month, day).toISOString();
+        let url= "https://www.googleapis.com/youtube/v3/search?q=" + q + "&key=" + API_KEY + "&maxResults=" + 4 + "&part=snippet" + "&publishedAfter=" + dateForYTApi;
 
         let self = this;
         $.ajax({
-            url: "https://www.googleapis.com/youtube/v3/search?q=" + q + "&key=" + API_KEY + "&maxResults=" + 4 + "&part=snippet" + "&publishedAfter=" + dateForYTApi,
+            url: url,
             dataType: "jsonp",
             success: function (data) {
                 self.setState({ videos: data.items });
@@ -72,7 +72,7 @@ class Videos extends React.Component {
                 </div>
 
                 {renderVideosResults()}
-                <RetourBtn />
+                <RetourBtn  chemin="/"/>
             </div>
         )
 
