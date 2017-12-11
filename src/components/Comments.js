@@ -14,7 +14,7 @@ class Comments extends React.Component{
     }
 
     componentDidMount() {
-        let { gd, gid, st} = this.props.match.params;
+        let { gd, gid, st, v, h} = this.props.match.params;
 
         let url= "https://cors-anywhere.herokuapp.com/data.nba.net/json/cms/noseason/game/"+ gd+"/"+gid+"/pbp_all.json";
 
@@ -39,7 +39,7 @@ class Comments extends React.Component{
             if (comments.length > 0) {
                 return comments.map((comment) => {
                     return (
-                        <Comment key={comment.event} {...comment} />
+                        <Comment key={comment.event} comment={comment} visitor={this.props.match.params.v} home={this.props.match.params.h}/>
                     );
                 });
             } else if (isLoading) {
