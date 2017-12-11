@@ -122,12 +122,10 @@ const Archive = (props) => {
                         (
                             <div >
                                 <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button>
-                                <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button>
                             </div>
                         ) : (
                             <div>
                                 <NavLink to={`stats/${props.id}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button></NavLink>
-                                <NavLink to={`videos/${date}/${q}/${visitor.abbreviation}/${home.abbreviation}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button></NavLink>
                             </div>
                         )}
                 </div>

@@ -35,7 +35,7 @@ const routes = (
             <Route path="/about" component={About} />
             <Route path="/videos/:date/:q/:v/:h" component={Videos} />
             <Route path="/teamprofile/:id/:abrev" component={TeamProfile} />
-            <Route path="/comments/:gd/:gid" component={Comments} />
+            <Route path="/comments/:gd/:gid/:st" component={Comments} />
             </div>
         </div>
     </HashRouter>

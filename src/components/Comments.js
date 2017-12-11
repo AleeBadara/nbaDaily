@@ -14,7 +14,7 @@ class Comments extends React.Component{
     }
 
     componentDidMount() {
-        let { gd, gid} = this.props.match.params;
+        let { gd, gid, st} = this.props.match.params;
 
         let url= "https://cors-anywhere.herokuapp.com/data.nba.net/json/cms/noseason/game/"+ gd+"/"+gid+"/pbp_all.json";
 
@@ -53,9 +53,18 @@ class Comments extends React.Component{
                 return <p>Aucun commentaire trouvé.</p>
             }
         }
+        let renderRefreshText=()=>{
+            let {st} = this.props.match.params;
+            if (st.toString() === "2"){
+                return(
+                    <p><small style={{color:"red"}}>Rafraichir la page de temps en temps pour avoir les derniers commentaires officiels de la NBA.</small></p>
+                )
+            }
+
+        }
         return(
             <div className="container">
-            <p><small style={{color:"red"}}>Rafraichir la page de temps en temps pour avoir les derniers commentaires officiels de la NBA.</small></p>
+            {renderRefreshText()}
             <RetourBtn  chemin="/"/>
             {renderComments()}
             </div>

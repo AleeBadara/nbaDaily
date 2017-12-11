@@ -54,8 +54,7 @@ const Game = (props) => {
                 <div >
                     <NavLink to={`stats/${props.gid}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button></NavLink>
                     <button className="btn btn-sm btn-outline-info disabled pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button>
-                    <NavLink to={`comments/${date}/${props.gid}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-commenting-o" aria-hidden="true"></i></button></NavLink>
-                    
+                    <NavLink to={`comments/${date}/${props.gid}/${st}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-commenting-o" aria-hidden="true"></i></button></NavLink>
                 </div>
             )
 
@@ -64,7 +63,7 @@ const Game = (props) => {
                 <div>
                     <NavLink to={`stats/${props.gid}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-line-chart" aria-hidden="true"></i></button></NavLink>
                     <NavLink to={`videos/${date}/${q}/${vAbreviation}/${hAbreviation}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-youtube-play" aria-hidden="true"></i></button></NavLink>
-                    <NavLink to={`comments/${date}/${props.gid}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-comment-o" aria-hidden="true"></i></button></NavLink>
+                    <NavLink to={`comments/${date}/${props.gid}/${st}`}><button className="btn btn-sm btn-outline-info pimpmy_gamebtn"><i className="fa fa-comment-o" aria-hidden="true"></i></button></NavLink>
                 </div>
             )
 
