@@ -1,8 +1,14 @@
 import React from 'react';
+import MySpinner from '../Utils/MySpinner';
 
 const TeamHallOfFame = (props) => {
     let { hallOfFameInductees } = props;
     let getHallOfFameInductees = () => {
+        if(!hallOfFameInductees){
+            return (
+                <MySpinner name="three-bounce" color="#17a2b8" />
+            )
+        }
         if (hallOfFameInductees.length > 0) {
             return hallOfFameInductees.map((hallOfFameInductee) => {
                 return (

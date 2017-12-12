@@ -65,16 +65,16 @@ class Classement extends React.Component {
                         <div>
                             <div className="card border-info pimpmy_card">
                                 <div className="card-header pimpmy_card_header">
-                                    <p>Conférence EST</p>
+                                    <p>EAST</p>
                                 </div>
                                 <div className="card-body">
                                     <table>
                                         <tbody>
                                             <tr className="tp">
-                                                <td><b>Rang</b></td>
+                                                <td><i className="fa fa-sort-numeric-asc fa-2x"  style={{color:'#17a2b8'}} aria-hidden="true"></i></td>
                                                 <td><b>Equipe</b></td>
-                                                <td><b>V</b></td>
-                                                <td><b>D</b></td>
+                                                <td><b>W</b></td>
+                                                <td><b>L</b></td>
                                             </tr>
                                             {renderEastClassement()}
 
@@ -84,16 +84,16 @@ class Classement extends React.Component {
                             </div>
                             <div className="card border-info pimpmy_card">
                                 <div className="card-header pimpmy_card_header">
-                                    <p>Conférence OUEST</p>
+                                    <p>WEST</p>
                                 </div>
                                 <div className="card-body">
                                     <table>
                                         <tbody>
                                             <tr className="tp">
-                                                <td><b>Rang</b></td>
+                                                <td><i className="fa fa-sort-numeric-asc fa-2x"  style={{color:'#17a2b8'}} aria-hidden="true"></i></td>
                                                 <td><b>Equipe</b></td>
-                                                <td><b>V</b></td>
-                                                <td><b>D</b></td>
+                                                <td><b>W</b></td>
+                                                <td><b>L</b></td>
                                             </tr>
                                             {renderWestClassement()}
                                         </tbody>

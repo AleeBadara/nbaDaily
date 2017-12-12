@@ -18,7 +18,7 @@ const TeamSocialSites = (props) => {
     return (
         <div className="card border-info pimpmy_card">
             <div className="card-header pimpmy_cardHeader">
-                <i className="fa fa-globe fa-2x pimpmy_fa" aria-hidden="true"></i>Réseau Social
+                <i className="fa fa-globe fa-2x pimpmy_fa" aria-hidden="true"></i>Web
             </div>
             <div className="card-body">
             <div className="container">

@@ -48,7 +48,7 @@ class Teams extends React.Component {
             return this.state.teams.map((team) => {
                 let { id, abrev } = team;
                 return (
-                    <li key={id} className="list-group-item"><img type="image/svg+xml" src={`/img/${abrev}_logo.svg`} className="logo" /><NavLink to={`teamprofile/${id}/${abrev}`}><button className="btn btn-sm btn-outline-info ">Voir</button></NavLink></li>
+                    <li key={id} className="list-group-item"><img type="image/svg+xml" src={`/img/${abrev}_logo.svg`} className="logo" /><NavLink to={`teamprofile/${id}/${abrev}`}><button className="btn btn-sm btn-outline-info" style={{marginLeft:'1rem'}}><i className="fa fa-expand fa-2x" aria-hidden="true"></i></button></NavLink></li>
                 );
             });
         }

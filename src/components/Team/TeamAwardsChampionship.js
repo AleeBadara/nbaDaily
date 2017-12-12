@@ -1,8 +1,14 @@
 import React from 'react';
+import MySpinner from '../Utils/MySpinner';
 
 const TeamAwardsChampionship = (props) => {
     let { championships } = props;
     let getChampionships = () => {
+        if(!championships){
+            return (
+                <MySpinner name="three-bounce" color="#17a2b8" />
+            )
+        }
         if (championships.length > 0) {
             return championships.map((championship) => {
                 return (
