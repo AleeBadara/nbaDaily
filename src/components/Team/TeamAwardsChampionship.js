@@ -1,5 +1,6 @@
 import React from 'react';
 import MySpinner from '../Utils/MySpinner';
+import {getTextLanguage} from '../Utils/Language';
 
 const TeamAwardsChampionship = (props) => {
     let { championships } = props;
@@ -17,7 +18,7 @@ const TeamAwardsChampionship = (props) => {
                             <b>{championship.YearAwarded}</b>
                         </div>
                         <div className="card-body">
-                            <p className="card-text"><span><b>Equipe adverse</b></span>: {championship.OppositeTeam}</p>
+                            <p className="card-text"><span><b>{getTextLanguage().oppositeTeam}</b></span>: {championship.OppositeTeam}</p>
                         </div>
                     </div>
                 );
@@ -31,7 +32,7 @@ const TeamAwardsChampionship = (props) => {
     return (
         <div className="card border-info pimpmy_card">
             <div className="card-header pimpmy_cardHeader">
-                <i className="fa fa-trophy fa-2x pimpmy_fa" aria-hidden="true"></i>Champion NBA *
+                <i className="fa fa-trophy fa-2x pimpmy_fa" aria-hidden="true"></i>{getTextLanguage().championships}
                 </div>
             <div className="card-body">
                 <div className="container">

@@ -1,5 +1,6 @@
 import React from 'react';
 import MySpinner from '../Utils/MySpinner';
+import {getTextLanguage} from '../Utils/Language';
 
 const TeamAwardsConferenceTitle = (props) => {
     let { conferenceTitles } = props;
@@ -19,14 +20,14 @@ const TeamAwardsConferenceTitle = (props) => {
             });
         } else {
             return (
-                <p>Aucun titre</p>
+                <p>{getTextLanguage().noTitle}</p>
             )
         }
     }
     return (
         <div className="card border-info pimpmy_card">
             <div className="card-header pimpmy_cardHeader">
-                <i className="fa fa-trophy fa-2x pimpmy_fa" aria-hidden="true"></i>Champion Conférence *
+                <i className="fa fa-trophy fa-2x pimpmy_fa" aria-hidden="true"></i>{getTextLanguage().conferenceTitles}
             </div>
             <div className="card-body">
                 <div className="container">

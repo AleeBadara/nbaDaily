@@ -1,5 +1,6 @@
 import React from 'react';
 import MySpinner from '../Utils/MySpinner';
+import {getTextLanguage} from '../Utils/Language';
 
 const TeamDetails = (props) => {
     let { yearFounded, city, owner, generalManager, headCoach, dLeagueAffiliation } = props.details;
@@ -9,19 +10,19 @@ const TeamDetails = (props) => {
                 <table>
                     <tbody>
                         <tr >
-                            <td><b>Année de foundation:</b></td>
+                            <td><b>{getTextLanguage().yearFounded}:</b></td>
                             <td>{yearFounded}</td>
                         </tr>
                         <tr>
-                            <td><b>Ville:</b></td>
+                            <td><b>{getTextLanguage().city}:</b></td>
                             <td>{city}</td>
                         </tr>
                         <tr>
-                            <td><b>Propriétaire:</b></td>
+                            <td><b>{getTextLanguage().owner}:</b></td>
                             <td>{owner}</td>
                         </tr>
                         <tr>
-                            <td><b>Manager Général:</b></td>
+                            <td><b>{getTextLanguage().generalManager}:</b></td>
                             <td>{generalManager}</td>
                         </tr>
                         <tr>

@@ -5,6 +5,7 @@ import TeamAwards from './TeamAwards';
 import TeamDetails from './TeamDetails';
 import TeamSocialSites from './TeamSocialSites';
 import TeamHallOfFame from './TeamHallOfFame';
+import {getTextLanguage} from '../Utils/Language';
 
 class TeamProfile extends React.Component {
     constructor(props) {
@@ -112,7 +113,7 @@ class TeamProfile extends React.Component {
                 <TeamAwards awards={getAwards()}/>
                 <TeamHallOfFame hallOfFameInductees={getHallOfFameInductees()}/>
                 <TeamSocialSites socialSites={getSocialSites()}/>
-                <p><small>*: des données sur les 2 années précédentes peuvent être manquantes. Ceci est dû à la périodicité de mise à jour des données de la part de la NBA.</small></p>
+                <p><small>{getTextLanguage().teamProfileNote}</small></p>
                 <RetourBtn chemin="/teams"/>
             </div>
         )

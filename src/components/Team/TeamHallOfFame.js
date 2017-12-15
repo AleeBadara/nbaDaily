@@ -1,5 +1,6 @@
 import React from 'react';
 import MySpinner from '../Utils/MySpinner';
+import {getTextLanguage} from '../Utils/Language';
 
 const TeamHallOfFame = (props) => {
     let { hallOfFameInductees } = props;
@@ -19,8 +20,8 @@ const TeamHallOfFame = (props) => {
 
                         <div className="card-body">
                             <div className="container">
-                                <p className="card-text"><span><b>Année</b></span>: {hallOfFameInductee.Year}</p>
-                                <p className="card-text"><span><b>Saison avec l'équipe</b></span>: {hallOfFameInductee.SeasonsWithTeam}</p>
+                                <p className="card-text"><span><b>{getTextLanguage().year}</b></span>: {hallOfFameInductee.Year}</p>
+                                <p className="card-text"><span><b>{getTextLanguage().seasonsWithTeam}</b></span>: {hallOfFameInductee.SeasonsWithTeam}</p>
                             </div>
                         </div>
                     </div>
@@ -28,7 +29,7 @@ const TeamHallOfFame = (props) => {
             });
         } else {
             return (
-                <p>Aucun Hall Of Fame</p>
+                <p>{getTextLanguage().noHOF}</p>
             )
         }
     };

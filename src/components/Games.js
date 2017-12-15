@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import Spinner from 'react-spinkit';
+import detectBrowserLanguage from 'detect-browser-language'
 
 import Api from '../api/TodayGames';
 import Game from './Game';
@@ -12,13 +13,9 @@ class Games extends React.Component {
         this.state = {
             date: new Date(),
             games: [],
-            isLoading: true
+            isLoading: true,
+            language:detectBrowserLanguage()
         };
-        this.handleDateChange = this.handleDateChange.bind(this);
-    }
-    handleDateChange() {
-        let date = this.refs.date.value;
-        this.setState({ date });
     }
 
     /**
@@ -48,6 +45,21 @@ class Games extends React.Component {
 
     render() {
         let { games, isLoading } = this.state;
+        let getTextLanguage= ()=> {
+            let lang= detectBrowserLanguage()? detectBrowserLanguage().toUpperCase():"";
+            console.log(lang);
+            let texts={
+                "load":"Loading...",
+                "noResult":"No result found for today",
+                archiveTextBtn:"See Archives"
+            }
+            if(lang.indexOf("FR")!== -1){
+                texts.load="Chargement...";
+                texts.noResult="Aucun résultat trouvé pour aujourd'hui.",
+                texts.archiveTextBtn="Voir Archives"
+            }
+            return texts;
+        }
         let renderGames = () => {
             if (games.length > 0) {
                 return games.map((game) => {
@@ -58,16 +70,16 @@ class Games extends React.Component {
             } else if (isLoading) {
                 return (
                     <div className="container">
-                        <span>Chargement...</span>
+                        <span>{getTextLanguage().load}</span>
                         <Spinner name="rotating-plane" color="#17a2b8"/>
                     </div>
                 )
             } else {
                 return (
                     <div className="container">
-                        <p>Aucun résultat trouvé pour aujourd'hui.</p>
+                        <p>{getTextLanguage().noResult}</p>
                         <div className="container retour">
-                            <NavLink exact to="/archives"><button type="button" className="btn btn-info">Voir Archives</button></NavLink>
+                            <NavLink exact to="/archives"><button type="button" className="btn btn-info">{getTextLanguage().archiveTextBtn}</button></NavLink>
                         </div>
                     </div>
                 )
