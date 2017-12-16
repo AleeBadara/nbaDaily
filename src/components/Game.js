@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Logo from "./Logo";
+import {getTextLanguage} from './Utils/Language';
 
 const Game = (props) => {
     let { v, h, st } = props;
@@ -12,11 +13,11 @@ const Game = (props) => {
     let getStatusGame = () => {
         switch (st.toString()) {
             case "1":
-                return "Non débuté";
+                return getTextLanguage().notStarted;
             case "2":
-                return "En cours";
+                return getTextLanguage().enCours;
             case "3":
-                return "Score Final";
+                return getTextLanguage().finalScore;
             default:
                 return "";
         }

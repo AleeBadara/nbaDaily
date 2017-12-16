@@ -3,6 +3,7 @@ import Spinner from 'react-spinkit';
 
 import Comment from './Comment';
 import RetourBtn from './RetourBtn';
+import {getTextLanguage} from './Utils/Language';
 
 class Comments extends React.Component{
     constructor(props) {
@@ -45,19 +46,19 @@ class Comments extends React.Component{
             } else if (isLoading) {
                 return (
                     <div className="container">
-                        <span>Chargement...</span>
+                        <span>{getTextLanguage().loading}</span>
                         <Spinner name="rotating-plane" color="#17a2b8" />
                     </div>
                 )
             } else {
-                return <p>Aucun commentaire trouvé.</p>
+                return <p>{getTextLanguage().noComment}</p>
             }
         }
         let renderRefreshText=()=>{
             let {st} = this.props.match.params;
             if (st.toString() === "2"){
                 return(
-                    <p><small style={{color:"red"}}>Rafraichir la page de temps en temps pour avoir les derniers commentaires officiels de la NBA.</small></p>
+                    <p><small style={{color:"red"}}>{getTextLanguage().commentRefreshMessage}</small></p>
                 )
             }
 

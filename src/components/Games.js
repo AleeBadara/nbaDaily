@@ -5,6 +5,7 @@ import detectBrowserLanguage from 'detect-browser-language'
 
 import Api from '../api/TodayGames';
 import Game from './Game';
+import {getTextLanguage} from './Utils/Language';
 
 
 class Games extends React.Component {
@@ -13,8 +14,7 @@ class Games extends React.Component {
         this.state = {
             date: new Date(),
             games: [],
-            isLoading: true,
-            language:detectBrowserLanguage()
+            isLoading: true
         };
     }
 
@@ -45,21 +45,6 @@ class Games extends React.Component {
 
     render() {
         let { games, isLoading } = this.state;
-        let getTextLanguage= ()=> {
-            let lang= detectBrowserLanguage()? detectBrowserLanguage().toUpperCase():"";
-            console.log(lang);
-            let texts={
-                "load":"Loading...",
-                "noResult":"No result found for today",
-                archiveTextBtn:"See Archives"
-            }
-            if(lang.indexOf("FR")!== -1){
-                texts.load="Chargement...";
-                texts.noResult="Aucun résultat trouvé pour aujourd'hui.",
-                texts.archiveTextBtn="Voir Archives"
-            }
-            return texts;
-        }
         let renderGames = () => {
             if (games.length > 0) {
                 return games.map((game) => {
@@ -70,14 +55,14 @@ class Games extends React.Component {
             } else if (isLoading) {
                 return (
                     <div className="container">
-                        <span>{getTextLanguage().load}</span>
+                        <span>{getTextLanguage().loading}</span>
                         <Spinner name="rotating-plane" color="#17a2b8"/>
                     </div>
                 )
             } else {
                 return (
                     <div className="container">
-                        <p>{getTextLanguage().noResult}</p>
+                        <p>{getTextLanguage().noResultToday}</p>
                         <div className="container retour">
                             <NavLink exact to="/archives"><button type="button" className="btn btn-info">{getTextLanguage().archiveTextBtn}</button></NavLink>
                         </div>

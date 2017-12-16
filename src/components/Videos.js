@@ -3,6 +3,7 @@ import Spinner from 'react-spinkit';
 
 import RetourBtn from './RetourBtn';
 import Video from './Video';
+import {getTextLanguage} from './Utils/Language';
 
 class Videos extends React.Component {
     constructor(props) {
@@ -37,7 +38,7 @@ class Videos extends React.Component {
                 self.setState({ isLoading: false });
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //alert(textStatus, + ' | ' + errorThrown);
+                
             }
         });
     }
@@ -54,13 +55,13 @@ class Videos extends React.Component {
             } else if (isLoading) {
                 return (
                     <div className="container">
-                        <span>Chargement...</span>
+                        <span>{getTextLanguage().loading}</span>
                         <Spinner name="rotating-plane" color="#17a2b8" />
                     </div>
                 );
             } else {
                 return (
-                    <p>Aucun résultat.</p>
+                    <p>{getTextLanguage().noResult}</p>
                 );
             }
 

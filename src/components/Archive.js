@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Logo from "./Logo";
+import {getTextLanguage} from './Utils/Language';
 
 const Archive = (props) => {
     let { id, period_time, visitor, home, st, date } = props;
@@ -9,11 +10,11 @@ const Archive = (props) => {
     let getStatusGame = () => {
         switch (period_time.game_status.toString()) {
             case "1":
-                return "Non débuté";
+                return getTextLanguage().notStarted;
             case "2":
-                return "En cours";
+                return getTextLanguage().enCours;
             case "3":
-                return "Score Final";
+                return getTextLanguage().finalScore;
             default:
                 return "";
         }

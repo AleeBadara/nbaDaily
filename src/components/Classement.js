@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Spinner from 'react-spinkit';
 
 import RetourBtn from './RetourBtn';
+import {getTextLanguage} from './Utils/Language';
 
 class Classement extends React.Component {
     constructor(props) {
@@ -58,23 +59,23 @@ class Classement extends React.Component {
             <div className="container">
                 {this.state.isLoading ? (
                     <div className="container">
-                        <span>Chargement...</span>
+                        <span>{getTextLanguage().loading}</span>
                         <Spinner name="rotating-plane" color="#17a2b8" />
                     </div>
                 ) : (
                         <div>
                             <div className="card border-info pimpmy_card">
                                 <div className="card-header pimpmy_card_header">
-                                    <p>EAST</p>
+                                    <p>{getTextLanguage().east}</p>
                                 </div>
                                 <div className="card-body">
                                     <table>
                                         <tbody>
                                             <tr className="tp">
                                                 <td><i className="fa fa-sort-numeric-asc fa-2x"  style={{color:'#17a2b8'}} aria-hidden="true"></i></td>
-                                                <td><b>Equipe</b></td>
-                                                <td><b>W</b></td>
-                                                <td><b>L</b></td>
+                                                <td><b>{getTextLanguage().team}</b></td>
+                                                <td><b>{getTextLanguage().victoire}</b></td>
+                                                <td><b>{getTextLanguage().defaite}</b></td>
                                             </tr>
                                             {renderEastClassement()}
 
@@ -84,16 +85,16 @@ class Classement extends React.Component {
                             </div>
                             <div className="card border-info pimpmy_card">
                                 <div className="card-header pimpmy_card_header">
-                                    <p>WEST</p>
+                                    <p>{getTextLanguage().west}</p>
                                 </div>
                                 <div className="card-body">
                                     <table>
                                         <tbody>
                                             <tr className="tp">
                                                 <td><i className="fa fa-sort-numeric-asc fa-2x"  style={{color:'#17a2b8'}} aria-hidden="true"></i></td>
-                                                <td><b>Equipe</b></td>
-                                                <td><b>W</b></td>
-                                                <td><b>L</b></td>
+                                                <td><b>{getTextLanguage().team}</b></td>
+                                                <td><b>{getTextLanguage().victoire}</b></td>
+                                                <td><b>{getTextLanguage().defaite}</b></td>
                                             </tr>
                                             {renderWestClassement()}
                                         </tbody>

@@ -4,6 +4,7 @@ var $ = require("jquery");
 import Archive from './Archive';
 import RetourBtn from './RetourBtn';
 import Spinner from 'react-spinkit';
+import {getTextLanguage} from './Utils/Language';
 
 
 class Archives extends React.Component {
@@ -81,12 +82,12 @@ class Archives extends React.Component {
             } else if (isLoading) {
                 return (
                     <div className="container">
-                        <span>Chargement...</span>
+                        <span>{getTextLanguage().loading}</span>
                         <Spinner name="rotating-plane" color="#17a2b8" />
                     </div>
                 )
             } else {
-                return <p>Aucun résultat trouvé pour aujourd'hui.</p>
+                return <p>{getTextLanguage().noResultToday}</p>
             }
         };
         return (
