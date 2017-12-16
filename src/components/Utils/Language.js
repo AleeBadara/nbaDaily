@@ -1,7 +1,7 @@
 import React from 'react';
-import detectBrowserLanguage from 'detect-browser-language';
 
-let lang = detectBrowserLanguage() ? detectBrowserLanguage().toUpperCase() : "";
+let lang = navigator && navigator.language ? (navigator.language).toUpperCase() : "";
+lang="d"
 export function getTextLanguage() {
     let texts = {
         "title": "NBA Daily",

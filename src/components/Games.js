@@ -1,7 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
 import Spinner from 'react-spinkit';
-import detectBrowserLanguage from 'detect-browser-language'
 
 import Api from '../api/TodayGames';
 import Game from './Game';
