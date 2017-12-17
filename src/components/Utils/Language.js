@@ -1,7 +1,6 @@
 import React from 'react';
 
 let lang = navigator && navigator.language ? (navigator.language).toUpperCase() : "";
-lang="d"
 export function getTextLanguage() {
     let texts = {
         "title": "NBA Daily",
