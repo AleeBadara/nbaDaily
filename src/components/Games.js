@@ -85,20 +85,8 @@ class Games extends React.Component {
                 )
             }
         };
-        let renderNBAXmas = () => {
-            return (
-                <div className="container">
-                    <i className="fa fa-snowflake-o" aria-hidden="true" style={{padding:"0.5rem",color:"#0091EA"}}></i>
-                    <i className="fa fa-gift" aria-hidden="true" style={{padding:"0.5rem",color:"#009688"}}><span style={{paddingLeft:"1rem",color:"#E91E63",fontSize:"1.5rem"}}>#NBAXmas Day</span></i>
-                    <i className="fa fa-snowflake-o" aria-hidden="true" style={{padding:"0.5rem",color:"#0091EA"}}></i>
-                    <i className="fa fa-gift" aria-hidden="true" style={{padding:"0.5rem",color:"#009688"}}></i>
-                </div>
-            )
-
-        }
         return (
             <div>
-                {renderNBAXmas()}
                 {renderGames()}
             </div>
         );
