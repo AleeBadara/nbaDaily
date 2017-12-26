@@ -35,7 +35,8 @@ export function getTextLanguage() {
         "goBack":"Back",
         "noResult":"No results.",
         "victoire":"W",
-        "defaite":"L"
+        "defaite":"L",
+        "errorTechnique":"Due to a server problem, the site is currently under maintenance. The site will be back very soon."
     }
     if (lang.indexOf("FR") !== -1) {
         texts.title = "NBA Quotidien";
@@ -68,7 +69,8 @@ export function getTextLanguage() {
         texts.goBack="Retour";
         texts.noResult="Acun résultat.";
         texts.victoire="V";
-        texts.defaite="D"
+        texts.defaite="D",
+        texts.errorTechnique="À cause d'un problème de serveur, le site est actuellement en maintenance. Le site sera de retour très bientôt.";
     }
     return texts;
 }
