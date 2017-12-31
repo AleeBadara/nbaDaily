@@ -14,6 +14,7 @@ const Navigation = () => {
                 <div className="navbar-nav" data-target=".navbar-collapse" data-toggle="collapse">
                     <li><NavLink exact to="/" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>{getTextLanguage().live}</NavLink></li>
                     <li><NavLink exact to="/classement" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>{getTextLanguage().classement}</NavLink></li>
+                    <li><NavLink exact to="/leaders" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Leaders</NavLink></li>
                     <li><NavLink exact to="/teams" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>{getTextLanguage().teams}</NavLink></li>
                     <li><NavLink exact to="/archives" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>{getTextLanguage().archives}</NavLink></li>
                     <li><NavLink exact to="/about" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>{getTextLanguage().about}</NavLink></li>

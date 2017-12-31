@@ -1,0 +1,29 @@
+.leadersForm{
+    margin-bottom: 1rem;
+}
+.pimpmy_select_input {
+    padding: .375rem .75rem;
+    /* font-size: 1rem; */
+    /* line-height: 1.5; */
+    color: #495057;
+    background-color: #fff; 
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin-left: 1rem;
+}
+.pimpmy_leaderform_div{
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+.modifier_btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+@media (max-width:410px) {
+    .td_hide{
+        display: none
+    }
+}

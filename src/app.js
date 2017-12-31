@@ -14,7 +14,7 @@ import Games from './components/Games';
 import GameDetail from './components/GameDetail';
 import Navigation from './components/Navigation';
 import Videos from './components/Videos';
-import Leaders from './components/Leaders';
+import Leaders from './components/Stats/Leaders';
 import Teams from './components/Team/Teams';
 import TeamProfile from './components/Team/TeamProfile';
 import Test from './components/Test';
@@ -29,7 +29,7 @@ const routes = (
             <Route exact path="/" component={Games} />
             <Route path="/stats/:gameid" component={GameDetail} />
             <Route path="/classement" component={Classement} />
-            <Route path="/lead" component={Leaders} />
+            <Route path="/leaders" component={Leaders} />
             <Route path="/teams" component={Teams} />
             <Route path="/archives" component={Archives} />
             <Route path="/about" component={About} />
